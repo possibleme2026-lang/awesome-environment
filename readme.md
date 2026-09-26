@@ -86,6 +86,7 @@
 | **daVinci-Env** | 大规模开放 SWE 环境合成 | 2026-03 | [arXiv:2603.13023](https://arxiv.org/abs/2603.13023) | ✅ 确认 |
 | **DockSmith** | 规模化可靠编码环境；Dockerfile、测试脚本自动化构建 | 2026-02 | [arXiv:2602.00592](https://arxiv.org/abs/2602.00592) | ✅ 确认 |
 | **TerminalTraj** | 从 Docker 化环境生成大规模终端 Agent 轨迹；32K 镜像 / 50,733 条验证轨迹；Qwen2.5-Coder 训练后 TB 1.0 +20%，TB 2.0 +10% | **ICML 2026** | [arXiv:2602.01244](https://arxiv.org/abs/2602.01244) | ✅ 确认，补全编号 |
+| **Terminal-Universe** | 将Agent轨迹逆向回放为可复用终端环境；生成37.3k个任务充足环境；微调Qwen3.5-27B后TB 2.1 +11.9分，EvoCode-Bench v2 MT@4 +13.8分 | 2026-09 | [arXiv:2609.04148](https://arxiv.org/abs/2609.04148) | ✅ 确认 |
 
 ---
 
