@@ -148,26 +148,23 @@
 
 ## 九、代表性工作要点摘要
 
-| 工作 | 方法 | 规模/实验结果 |
+| 工作 | 方法 | 规模 / 实验结果 |
 |---|---|---|
-| **Agent-World**（智源/TARS） | 工具依赖图 + 可执行 Python 解任务合成，难度可控；多环境闭环 RL + GRPO；自演化竞技场 | 1978 环境 / 20 类 / 19,822 工具；8B/14B 训练后超越多个闭源模型 |
-| **EnvScaler**（人大） | SkelBuilder（环境骨架：可执行程序 + 文档 + 工具接口，双 Agent 评估）+ ScenGenerator（场景/任务/终态校验函数） | 191 环境 / ~7K 场景；SFT 后 BFCL-MT +8.67、ACEBench-Agent +11.57 |
-| **InfiniteWeb** | 可扩展 Web 环境合成，面向 GUI Agent 域内泛化 | 合成网站迁移到真实网页做泛化测试 |
-| **Agent-World Model** | 无限合成环境 Agentic RL | 与 τ-bench、MCP-Universe 做对比实验 |
-| **ToolVerse** | 大规模工具环境 + 长程任务 | ~400 MCP servers / ~4,500 tools；环境多样性收益 > 增加 rollout 数量，BFCL-v3 / τ²-Bench 显著提升 |
-| **AgentDrive** | LLM Prompt 生成 JSON 驾驶场景 | 30 万驾驶场景；[arXiv:2601.16964](https://arxiv.org/abs/2601.16964) |
-| **Agentick** | 程序化生成 37 任务，Gymnasium 接口 + oracle 策略 + SFT 数据 | 通用序贯决策评测；[arXiv:2605.06869](https://arxiv.org/abs/2605.06869) |
-| **Survey: Scaling Environments for LLM Agents** | 提出 GEF loop：任务生成-执行-反馈，统一分类框架 | 环境中心视角综述 |
+| **Agent-World**（智源 / TARS） | 基于工具依赖图与可执行 Python 求解的任务合成，难度可控；多环境闭环 RL + GRPO；自演化竞技场 | 1,978 个环境 / 20 类 / 19,822 个工具；8B / 14B 模型训练后超越多个闭源模型 |
+| **EnvScaler**（人大） | SkelBuilder（环境骨架：可执行程序 + 文档 + 工具接口，双 Agent 评估）+ ScenGenerator（场景 / 任务 / 终态校验函数） | 191 个环境 / 约 7K 场景；SFT 后 BFCL-MT 提升 +8.67、ACEBench-Agent 提升 +11.57 |
+| **InfiniteWeb** | 可扩展 Web 环境合成，面向 GUI Agent 域内泛化 | 将合成网站迁移至真实网页进行泛化测试 |
+| **Agent-World Model** | 面向无限合成环境的 Agentic RL | 在 τ-bench、MCP-Universe 上开展对比实验 |
+| **ToolVerse** | 大规模工具环境 + 长程任务 | 约 400 个 MCP servers / 约 4,500 个 tools；环境多样性带来的收益大于单纯增加 rollout 数量，BFCL-v3 / τ²-Bench 显著提升 |
+| **AgentDrive** | 通过 LLM Prompt 生成 JSON 驾驶场景 | 生成 30 万个驾驶场景；[arXiv:2601.16964](https://arxiv.org/abs/2601.16964) |
+| **Agentick** | 程序化生成 37 个任务，Gymnasium 接口 + oracle 策略 + SFT 数据 | 用于通用序贯决策评测；[arXiv:2605.06869](https://arxiv.org/abs/2605.06869) |
+| **Survey: Scaling Environments for LLM Agents** | 提出 GEF loop（任务生成—执行—反馈），并给出统一分类框架 | 从环境中心视角进行综述 |
+
+## 十、Sandbox Infra（沙箱基础设施）
+
+| 项目 | 简述 | 日期 | 链接 | 备注 |
+|---|---|---|---|---|
+| **AgentENV (AENV)** | 由 Moonshot AI 与 kvcache-ai 联合开源的高吞吐分布式智能体环境平台，基于 Firecracker microVM 提供强隔离 Linux 沙箱，专为 Kimi K3 的 Agentic RL 训练打造；支持快照、fork、按需镜像加载，启动 / 恢复 <50ms，暂停 <100ms，兼容 E2B SDK | 2026-07 | [github.com/kvcache-ai/AgentENV](https://github.com/kvcache-ai/AgentENV) | ✅ 确认；开源日期 2026-07-27 |
+| **WeEnv** | 微信（WeChat）面向 Agentic RL 的全生命周期环境管理系统，覆盖打包（packaging）、初始化（initialization）与弹性供给（provisioning）三个阶段；通过层组复用、按需拉取与 CPU / 内存弹性配额，将环境初始化开销降低 5.6–14.2 倍，迭代时间中环境占比从最高 53.4% 降至 9.1% | 2026-09 | [arXiv:2609.30766](https://arxiv.org/abs/2609.30766) | ✅ 确认；arXiv 提交于 2026-09-25 |
+| **DeepSeek Elastic Compute (DSec)** | DeepSeek 生产级沙盒基础设施，统一提供 FnCall、容器、microVM 与 full-VM 四种后端；单生产单元约 160 节点 / 3 万核 / 250TB 内存，日均服务约 300 万沙盒，峰值并发超 38 万，创建速率超 5000/秒。所有 DeepSeek V3.2–V4.1 的 RL 训练与评测均在 DSec 上运行 | 2026-09 | [arXiv:2609.22978](https://arxiv.org/abs/2609.22978) | ✅ 确认；arXiv 提交于 2026-09-19；梁文锋署名，130+ 作者 |
 
 
-
-
-
-## 十、sandbox infra
----
-| **AgentENV (AENV)** | 由 Moonshot AI 与 kvcache-ai 联合开源的高吞吐分布式智能体环境平台，基于 Firecracker microVM 提供强隔离 Linux 沙箱，专为 Kimi K3 的 Agentic RL 训练打造。支持快照、fork、按需镜像加载，启动/恢复 <50ms，暂停 <100ms，兼容 E2B SDK | 2026-07 | [github.com/kvcache-ai/AgentENV](https://github.com/kvcache-ai/AgentENV) | ✅ 确认，开源日期 2026-07-27 |
-| **WeEnv** | 微信（WeChat）面向 Agentic RL 的全生命周期环境管理系统，覆盖打包（packaging）、初始化（initialization）、弹性供给（provisioning）三个阶段。通过层组复用、按需拉取与 CPU/内存弹性配额，将环境初始化开销降低 5.6–14.2 倍，迭代时间中环境占比从最高 53.4% 降至 9.1% | 2026-09 | [arXiv:2609.30766](https://arxiv.org/abs/2609.30766) | ✅ 确认，提交于 2026-09-25 |
-| **DeepSeek Elastic Compute (DSec)** | DeepSeek 生产级沙盒基础设施，统一提供 FnCall、容器、microVM 与 full-VM 四种后端。单生产单元约 160 节点 / 3 万核 / 250TB 内存，日均服务约 300 万沙盒，峰值并发超 38 万，创建速率超 5000/秒。所有 DeepSeek V3.2–V4.1 的 RL 训练与评测均在 DSec 上运行 | 2026-09 | [arXiv:2609.22978](https://arxiv.org/abs/2609.22978) | ✅ 确认，提交于 2026-09-19；梁文锋署名，130+ 作者 |
-
-
----
