@@ -159,3 +159,12 @@
 
 
 
+## 十、sandbox infra
+
+| **AgentENV (AENV)** | 由 Moonshot AI 与 kvcache-ai 联合开源的高吞吐分布式智能体环境平台，基于 Firecracker microVM 提供强隔离 Linux 沙箱，专为 Kimi K3 的 Agentic RL 训练打造。支持快照、fork、按需镜像加载，启动/恢复 <50ms，暂停 <100ms，兼容 E2B SDK | 2026-07 | [github.com/kvcache-ai/AgentENV](https://github.com/kvcache-ai/AgentENV) | ✅ 确认，开源日期 2026-07-27 |
+| **WeEnv** | 微信（WeChat）面向 Agentic RL 的全生命周期环境管理系统，覆盖打包（packaging）、初始化（initialization）、弹性供给（provisioning）三个阶段。通过层组复用、按需拉取与 CPU/内存弹性配额，将环境初始化开销降低 5.6–14.2 倍，迭代时间中环境占比从最高 53.4% 降至 9.1% | 2026-09 | [arXiv:2609.30766](https://arxiv.org/abs/2609.30766) | ✅ 确认，提交于 2026-09-25 |
+| **DeepSeek Elastic Compute (DSec)** | DeepSeek 生产级沙盒基础设施，统一提供 FnCall、容器、microVM 与 full-VM 四种后端。单生产单元约 160 节点 / 3 万核 / 250TB 内存，日均服务约 300 万沙盒，峰值并发超 38 万，创建速率超 5000/秒。所有 DeepSeek V3.2–V4.1 的 RL 训练与评测均在 DSec 上运行 | 2026-09 | [arXiv:2609.22978](https://arxiv.org/abs/2609.22978) | ✅ 确认，提交于 2026-09-19；梁文锋署名，130+ 作者 |
+| **CUA-Sandbox** | 计算机使用智能体（Computer-Use Agent）强化学习的高效环境方案。核心观察是轨迹需要独立可变状态，而初始化后的应用运行时可在并发环境间复用。通过状态胶囊（state capsule）、签名路由能力（signed route capability）和代际租约（generation lease）实现状态作用域执行与事务性生命周期操作，保留原始软件接口与任务评估器。在 WebArena-Lite、VisualWebArena 和 OSWorld 上评估，相比 Docker 实现最高 6.20× rollout 吞吐提升、9.2× 单环境内存降低、504× 增量存储降低 | 2026-09 | [arXiv:2609.32750](https://arxiv.org/abs/2609.32750) · [PDF](https://arxiv.org/pdf/2609.32750) | ✅ 确认，提交于 2026-09-26；第一作者 Xin Yan，通讯作者 Xingrui Yu；14 位作者来自 A*STAR、HKUST、BNU、NUS、NTU、ZJU、PKU；开源代码：[github.com/windskyyx/Cua-Sandbox](https://github.com/windskyyx/Cua-Sandbox) |
+
+
+
