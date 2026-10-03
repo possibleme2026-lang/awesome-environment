@@ -164,7 +164,7 @@
 
 
 ## 十、sandbox infra
-
+---
 | **AgentENV (AENV)** | 由 Moonshot AI 与 kvcache-ai 联合开源的高吞吐分布式智能体环境平台，基于 Firecracker microVM 提供强隔离 Linux 沙箱，专为 Kimi K3 的 Agentic RL 训练打造。支持快照、fork、按需镜像加载，启动/恢复 <50ms，暂停 <100ms，兼容 E2B SDK | 2026-07 | [github.com/kvcache-ai/AgentENV](https://github.com/kvcache-ai/AgentENV) | ✅ 确认，开源日期 2026-07-27 |
 | **WeEnv** | 微信（WeChat）面向 Agentic RL 的全生命周期环境管理系统，覆盖打包（packaging）、初始化（initialization）、弹性供给（provisioning）三个阶段。通过层组复用、按需拉取与 CPU/内存弹性配额，将环境初始化开销降低 5.6–14.2 倍，迭代时间中环境占比从最高 53.4% 降至 9.1% | 2026-09 | [arXiv:2609.30766](https://arxiv.org/abs/2609.30766) | ✅ 确认，提交于 2026-09-25 |
 | **DeepSeek Elastic Compute (DSec)** | DeepSeek 生产级沙盒基础设施，统一提供 FnCall、容器、microVM 与 full-VM 四种后端。单生产单元约 160 节点 / 3 万核 / 250TB 内存，日均服务约 300 万沙盒，峰值并发超 38 万，创建速率超 5000/秒。所有 DeepSeek V3.2–V4.1 的 RL 训练与评测均在 DSec 上运行 | 2026-09 | [arXiv:2609.22978](https://arxiv.org/abs/2609.22978) | ✅ 确认，提交于 2026-09-19；梁文锋署名，130+ 作者 |
