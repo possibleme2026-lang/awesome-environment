@@ -38,6 +38,10 @@
 | **ClawEnvKit** | 自然语言规格 → 按需生成 claw-like Agent 环境；Auto-ClawEval 含 1,040 环境 / 24 类别；成本比人工低 13,800 倍；Harness engineering 比裸 ReAct 提升最多 15.7 个百分点 | 2026-04 | [arXiv:2604.18543](https://arxiv.org/abs/2604.18543) | ✅ 确认 |
 | **AgentMercury** | 从高层商业场景合成可执行环境；4,783 环境 / 14 行业 / 50 国家；Qwen3.5-4B 在 EnterpriseOps-GYM 上 12.3→15.7；微调后世界编写成功率 3.3%→83.3% | 2026-08 | [arXiv:2608.20634](https://arxiv.org/abs/2608.20634) | ✅ 确认 |
 | **Repo2RLEnv** | 将 GitHub 仓库/PR/提交历史转换为可执行 RL 环境；输出 Harbor 格式任务包（指令+环境+参考解+验证器）；内置 6 条原生流水线 + Tasksmith + 14 个研究配方；支持推送至 HuggingFace Hub | [GitHub](https://github.com/huggingface/Repo2RLEnv) · [文档](https://huggingface.github.io/Repo2RLEnv/) |
+| **CUA-Sandbox** | 计算机使用智能体（Computer-Use Agent）强化学习的高效环境方案。核心观察是轨迹需要独立可变状态，而初始化后的应用运行时可在并发环境间复用。通过状态胶囊（state capsule）、签名路由能力（signed route capability）和代际租约（generation lease）实现状态作用域执行与事务性生命周期操作，保留原始软件接口与任务评估器。在 WebArena-Lite、VisualWebArena 和 OSWorld 上评估，相比 Docker 实现最高 6.20× rollout 吞吐提升、9.2× 单环境内存降低、504× 增量存储降低 | 2026-09 | [arXiv:2609.32750](https://arxiv.org/abs/2609.32750) · [PDF](https://arxiv.org/pdf/2609.32750) | ✅ 确认，提交于 2026-09-26；第一作者 Xin Yan，通讯作者 Xingrui Yu；14 位作者来自 A*STAR、HKUST、BNU、NUS、NTU、ZJU、PKU；开源代码：[github.com/windskyyx/Cua-Sandbox](https://github.com/windskyyx/Cua-Sandbox) |
+
+
+
 ---
 
 ## 三、经验/交互合成
@@ -164,7 +168,6 @@
 | **AgentENV (AENV)** | 由 Moonshot AI 与 kvcache-ai 联合开源的高吞吐分布式智能体环境平台，基于 Firecracker microVM 提供强隔离 Linux 沙箱，专为 Kimi K3 的 Agentic RL 训练打造。支持快照、fork、按需镜像加载，启动/恢复 <50ms，暂停 <100ms，兼容 E2B SDK | 2026-07 | [github.com/kvcache-ai/AgentENV](https://github.com/kvcache-ai/AgentENV) | ✅ 确认，开源日期 2026-07-27 |
 | **WeEnv** | 微信（WeChat）面向 Agentic RL 的全生命周期环境管理系统，覆盖打包（packaging）、初始化（initialization）、弹性供给（provisioning）三个阶段。通过层组复用、按需拉取与 CPU/内存弹性配额，将环境初始化开销降低 5.6–14.2 倍，迭代时间中环境占比从最高 53.4% 降至 9.1% | 2026-09 | [arXiv:2609.30766](https://arxiv.org/abs/2609.30766) | ✅ 确认，提交于 2026-09-25 |
 | **DeepSeek Elastic Compute (DSec)** | DeepSeek 生产级沙盒基础设施，统一提供 FnCall、容器、microVM 与 full-VM 四种后端。单生产单元约 160 节点 / 3 万核 / 250TB 内存，日均服务约 300 万沙盒，峰值并发超 38 万，创建速率超 5000/秒。所有 DeepSeek V3.2–V4.1 的 RL 训练与评测均在 DSec 上运行 | 2026-09 | [arXiv:2609.22978](https://arxiv.org/abs/2609.22978) | ✅ 确认，提交于 2026-09-19；梁文锋署名，130+ 作者 |
-| **CUA-Sandbox** | 计算机使用智能体（Computer-Use Agent）强化学习的高效环境方案。核心观察是轨迹需要独立可变状态，而初始化后的应用运行时可在并发环境间复用。通过状态胶囊（state capsule）、签名路由能力（signed route capability）和代际租约（generation lease）实现状态作用域执行与事务性生命周期操作，保留原始软件接口与任务评估器。在 WebArena-Lite、VisualWebArena 和 OSWorld 上评估，相比 Docker 实现最高 6.20× rollout 吞吐提升、9.2× 单环境内存降低、504× 增量存储降低 | 2026-09 | [arXiv:2609.32750](https://arxiv.org/abs/2609.32750) · [PDF](https://arxiv.org/pdf/2609.32750) | ✅ 确认，提交于 2026-09-26；第一作者 Xin Yan，通讯作者 Xingrui Yu；14 位作者来自 A*STAR、HKUST、BNU、NUS、NTU、ZJU、PKU；开源代码：[github.com/windskyyx/Cua-Sandbox](https://github.com/windskyyx/Cua-Sandbox) |
 
 
-
+---
