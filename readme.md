@@ -168,3 +168,34 @@
 | **DeepSeek Elastic Compute (DSec)** | DeepSeek 生产级沙盒基础设施，统一提供 FnCall、容器、microVM 与 full-VM 四种后端；单生产单元约 160 节点 / 3 万核 / 250TB 内存，日均服务约 300 万沙盒，峰值并发超 38 万，创建速率超 5000/秒。所有 DeepSeek V3.2–V4.1 的 RL 训练与评测均在 DSec 上运行 | 2026-09 | [arXiv:2609.22978](https://arxiv.org/abs/2609.22978) | ✅ 确认；arXiv 提交于 2026-09-19；梁文锋署名，130+ 作者 |
 
 
+# 十一、cua
+
+
+| 工作名称 | arXiv 链接 | 简要描述与 venue | 确认状态 |
+|---|---|---|---|
+| Gym-Anything: Turn any Software into an Agent Environment | [arXiv:2604.06126](https://arxiv.org/abs/2604.06126) | 多 Agent 流水线将任意软件转化为交互式 CUA 环境，构建 CUA-World（200 软件、10K+ 长视野任务）和 CUA-World-Long（>500 步） | ✅ 确认，arXiv 2026.04 |
+| CUA-GYM: Scaling Verifiable Training Environments and Tasks for Computer-Use Agents | [arXiv:2605.25624](https://arxiv.org/abs/2605.25624) | Generator/Discriminator 双 Agent 协作生成可验证 RLVR 训练元组，32,112 条覆盖 110 环境；CUA-GYM-A17B 在 OSWorld-Verified 达 72.6% | ✅ 确认，arXiv 2026.05 |
+| CUA-Lite: An Open Platform for Computer-Use Agents | [UC Berkeley RDI 博客](https://rdi.berkeley.edu/blog/cua-lite/) | 统一 Lite.Gym / Lite.Sample / 模型 harness 三大抽象，15+ 基准、10+ 数据集、30K+ 可验证任务 | ✅ 确认，暂无 arXiv 编号，UC Berkeley RDI 发布 |
+| Cua (trycua/cua) | [GitHub](https://github.com/trycua/cua) | 开源基础设施：沙箱、SDK 和基准测试，支持 macOS/Linux/Windows 全桌面控制；配套 Cua-Bench | ✅ 确认，GitHub 项目，无独立 arXiv 论文 |
+| Cua Agent framework 0.4 | [Cua 博客](https://cua.ai) | 统一多模型接口，支持 Composite Agents（grounding + planning 模型组合） | ✅ 确认，官方博客 2025.08 |
+| OpenCUA: Open Foundations for Computer-Use Agents | [arXiv:2508.09123](https://arxiv.org/abs/2508.09123) | 开源框架含标注基础设施、AgentNet 数据集（3 OS、200+ 应用）和 CoT 推理流水线；OpenCUA-72B 在 OSWorld-Verified 达 45.0% | ✅ 确认，**NeurIPS 2025** |
+| CUA-Sandbox: Efficient Environments for Computer-Use Agent Reinforcement Learning | [arXiv:2609.32750](https://arxiv.org/abs/2609.32750) | 通过 state capsule 与共享运行时分离，实现 6.20× rollout 吞吐提升、9.2× 内存降低、504× 存储减少 | ✅ 确认，arXiv 2026.09 |
+| OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments | [arXiv:2404.07972](https://arxiv.org/abs/2404.07972) | 369 个真实桌面任务，覆盖 Web/桌面应用、文件 I/O 和跨应用工作流，Ubuntu/Windows/macOS | ✅ 确认，arXiv 2024.04 |
+| OSWorld 2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks | [arXiv:2606.29537](https://arxiv.org/abs/2606.29537) | 将 CUA 评估推至专业级真实工作流难度，二进制成功率仅 20.6% | ✅ 确认，arXiv 2026.06 |
+| OSWorld-Human: Benchmarking the Efficiency of Computer-Use Agents | [arXiv:2506.16042](https://arxiv.org/abs/2506.16042) | 人工标注效率基准，发现领先 Agent 平均使用必要步骤的 1.4–2.7 倍 | ✅ 确认，arXiv 2025.06 |
+| WebArena: A Realistic Web Environment for Building Autonomous Agents | [arXiv:2307.13854](https://arxiv.org/abs/2307.13854) | 四个自托管网站（电商、社交论坛、协作开发、CMS）+ 地图工具，812 个长视野 Web 任务 | ✅ 确认，arXiv 2023.07 |
+| CUARewardBench: A Benchmark for Evaluating Reward Models on Computer-using Agent | [arXiv:2510.18596](https://arxiv.org/abs/2510.18596) | 首个 CUA 奖励模型基准，覆盖 10 软件类别、7 Agent 架构；UPE 方法达 89.8% 精度和 93.3% NPV | ✅ 确认，**ICML 2026** |
+| Computer Agent Arena: Toward Human-Centric Evaluation and Analysis of Computer-Use Agents | [ICLR 2026 论文](https://proceedings.iclr.cc/paper_files/paper/2026/hash/5f1d328711b162e1cf9896c7d6aaecdd-Abstract-Conference.html) | 人类偏好驱动的头对头评估平台，2,201 票覆盖 12 Agent，观察到与静态基准的排名反转 | ✅ 确认，**ICLR 2026** |
+| MCPWorld: A Unified Benchmarking Testbed for API, GUI, and Hybrid Computer Use Agents | [arXiv:2506.07672](https://arxiv.org/abs/2506.07672) | 首个同时支持 API、GUI 和混合范式的 CUA 测试平台，201 个任务，75.12% 完成准确率 | ✅ 确认，arXiv 2025.06 |
+| UI-CUBE: Enterprise-Grade Computer Use Agent Benchmarking Beyond Task Accuracy to Operational Reliability | [arXiv:2511.17131](https://arxiv.org/abs/2511.17131) | UiPath 企业导向确定性基准，226 任务（136 简单 + 90 复杂），暴露 CUA 根本性架构局限 | ✅ 确认，arXiv 2025.11 |
+| Agent S: An Open Agentic Framework that Uses Computers Like a Human | [arXiv:2410.08164](https://arxiv.org/abs/2410.08164) | 开放 Agent 框架，通过 GUI 实现计算机自主交互；Agent S2 在 OSWorld 15 步/50 步评估达 18.9%/32.7% | ✅ 确认，**ICLR 2025** |
+| Agent S3: The Unreasonable Effectiveness of Scaling Agents for Computer Use | [arXiv:2510.02250](https://arxiv.org/abs/2510.02250) | Agent S 系列的缩放版本，GPT-5 驱动下接近人类水平 | ✅ 确认，**TMLR 2026** |
+| OpenAgentFleet | [PyPI](https://pypi.org/project/open-agent-fleet/) | 自托管自主 CUA 平台，每个 Agent 获得独立可丢弃的 Linux 桌面并实时流式传输到浏览器 | ✅ 确认，无 arXiv 论文 |
+| open-computer-use (QwenLM) | [GitHub](https://github.com/QwenLM/open-computer-use) | 基于 MCP 的计算机使用服务，通过 accessibility API 控制 macOS/Linux/Windows | ✅ 确认，GitHub 项目 |
+| open-computer-use (e2b-dev) | [GitHub](https://github.com/e2b-dev/open-computer-use) | 基于 E2B Desktop Sandbox 的安全云 Linux 计算机，由开源 LLM 控制 | ✅ 确认，GitHub 项目 |
+| OmniPilot | [PyPI](https://pypi.org/project/omnipilot-agent/) | 跨平台开源 CUA，支持 13 个模型提供商和本地模型，41 个内置工具，四级权限系统 | ✅ 确认，无 arXiv 论文，PyPI 发布 |
+| Tarsier-AI | [PyPI](https://pypi.org/project/tarsier-ai/) | 为 LLM 提供 Windows 桌面应用的确定性交互层，内置 MCP Server，避免基于像素坐标的脆弱点击 | ✅ 确认，无 arXiv 论文 |
+
+
+
+
